@@ -6,7 +6,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 898857450402.dkr.ecr.ap-south-1.amazonaws.com)
-      - REPOSITORY_URI=898857450402.dkr.ecr.ap-south-1.amazonaws.com/project1
+      - REPOSITORY_URI=898857450402.dkr.ecr.ap-south-1.amazonaws.com/project1/testrepo
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-8) # Optionally set tag to git commit hash
   build:
     commands:
@@ -28,3 +28,4 @@ artifacts:
     - k8s/*.yaml
 
     - buildspec.yml
+
