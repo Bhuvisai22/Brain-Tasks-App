@@ -10,5 +10,6 @@ spec:
     app: brain-tasks-app
   ports:
     - protocol: TCP
-      port: 3000       # External port users will access
-      targetPort: 80   # Internal container port
+      port: 3000      
+
+      targetPort: 80   
